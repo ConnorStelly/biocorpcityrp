@@ -459,6 +459,31 @@ TEAM_SWAT = DarkRP.createJob("S.W.A.T Medic", {
 })
 
 ---Staff Jobs
+TEAM_SOD = DarkRP.createJob("Staff On Duty", {
+   color = Color(0, 232, 255, 255),
+   model = {"models/mark2580/rememberme/enforcer_rebel.mdl"},
+   description = [[]],
+   weapons = {"weapon_arc_atmcard", "unarrest_stick", "weaponchecker", "weapon_keypadchecker"},
+   command = "sod",
+   max = 5,
+   salary = 0,
+   admin = 1,
+   vote = false,
+   hasLicense = true,
+   candemote = false,
+   -- CustomCheck
+   medic = false,
+   chief = false,
+   mayor = false,
+   hobo = false,
+   cook = false,
+   category = "Other",
+      customCheck = function(ply) return
+   table.HasValue({"developer", "headdeveloper", "owner" "coowner", "trialmoderator", "moderator", "headmoderator", "admin", "eliteadmin", "headadmin", "superadmin", "comanager", "manager", "communitymanager"}, ply:GetNWString("usergroup"))
+end,
+CustomCheckFailMsg = "This Job is Staff only.",
+})
+
 
 TEAM_ADMIN = DarkRP.createJob("Owner On Duty", {
    color = Color(0, 232, 255, 255),
